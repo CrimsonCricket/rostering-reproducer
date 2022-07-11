@@ -1,0 +1,50 @@
+<plannerBenchmark xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xmlns="https://www.optaplanner.org/xsd/benchmark"
+                  xsi:schemaLocation="https://www.optaplanner.org/xsd/benchmark https://www.optaplanner.org/xsd/benchmark/benchmark.xsd">
+
+    <benchmarkDirectory>benchmark-results</benchmarkDirectory>
+    <inheritedSolverBenchmark>
+        <solver>
+            <solutionClass>nl.pompkracht.rosteringengine.reproducer.Roster</solutionClass>
+            <entityClass>nl.pompkracht.rosteringengine.reproducer.ShiftAssignment</entityClass>
+            <domainAccessType>GIZMO</domainAccessType>
+            <scoreDirectorFactory>
+                <constraintProviderClass>nl.pompkracht.rosteringengine.reproducer.RosterConstraintProvider
+                </constraintProviderClass>
+            </scoreDirectorFactory>
+            <termination>
+                <minutesSpentLimit>1</minutesSpentLimit>
+            </termination>
+            <constructionHeuristic>
+                <constructionHeuristicType>FIRST_FIT_DECREASING</constructionHeuristicType>
+            </constructionHeuristic>
+        </solver>
+        <problemBenchmarks>
+            <solutionFileIOClass>nl.pompkracht.rosteringengine.reproducer.RosterSolutionFileIO</solutionFileIOClass>
+            <inputSolutionFile>
+                src/main/resources/nl/pompkracht/rosteringengine/reproducer/data/overconstrained-roster.json
+            </inputSolutionFile>
+        </problemBenchmarks>
+    </inheritedSolverBenchmark>
+
+    <solverBenchmark>
+        <name>Fast assert</name>
+        <solver>
+            <environmentMode>FAST_ASSERT</environmentMode>
+            <localSearch>
+                <localSearchType>TABU_SEARCH</localSearchType>
+            </localSearch>
+        </solver>
+    </solverBenchmark>
+    <solverBenchmark>
+        <name>Reproducible</name>
+        <solver>
+            <environmentMode>REPRODUCIBLE</environmentMode>
+            <localSearch>
+                <localSearchType>TABU_SEARCH</localSearchType>
+            </localSearch>
+        </solver>
+    </solverBenchmark>
+
+
+</plannerBenchmark>

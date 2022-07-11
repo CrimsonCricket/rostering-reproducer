@@ -1,0 +1,16 @@
+[versions]
+kotlin-logging = "2.1.23"
+optaplanner = "8.23.0.Final"
+kotlin = "1.6.21"
+gizmo = "1.0.11.Final"
+
+
+[libraries]
+kotlin-logging = { module = "io.github.microutils:kotlin-logging-jvm", version.ref = "kotlin-logging" }
+optaplanner = { module = "org.optaplanner:optaplanner-core", version.ref = "optaplanner" }
+optaplanner-test = { module = "org.optaplanner:optaplanner-test", version.ref = "optaplanner" }
+optaplanner-benchmark = { module = "org.optaplanner:optaplanner-benchmark", version.ref = "optaplanner" }
+optaplanner-persistence-jackson = { module = "org.optaplanner:optaplanner-persistence-jackson", version.ref = "optaplanner" }
+kotlin-noarg = { module = "org.jetbrains.kotlin:kotlin-noarg", version.ref = "kotlin" }
+gizmo = { module = "io.quarkus.gizmo:gizmo", version.ref = "gizmo" }
+

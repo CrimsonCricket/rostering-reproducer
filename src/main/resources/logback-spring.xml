@@ -1,0 +1,5 @@
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <logger name="org.optaplanner" level="DEBUG"/>
+    <logger name="nl.pompkracht.rosteringengine" level="INFO"/>
+</configuration>
